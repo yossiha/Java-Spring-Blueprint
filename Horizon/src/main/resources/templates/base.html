@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<title>Blueprint</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script th:src="@{/js/jquery.cropit.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<link rel="stylesheet" th:href="@{/css/app.css}" />
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<h1>Base Home</h1>
+	</div>
+	<p
+		th:classappend="${#httpServletRequest.servletPath.equals('/register') ? 'active' : ''}">
+		<a th:href="register">Register</a>
+	</p>
+	<a style="color: blue" th:href="@{/business/add}">Add a Business</a>
+	<br />
+	<a style="color: blue" th:href="@{/login}">Login Page</a>
+	<br />
+	<a style="color: blue" th:href="@{/logout}">Logout Page</a>
+	<br />
+
+</body>
+</html>

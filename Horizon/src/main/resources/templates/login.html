@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+<html layout:decorate="~{/base.html}">
+<head>
+<title>Login Page</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div th:if="${param.error}">
+			<p style="color: orange">UserName or PassWord is wrong. Please
+				check again!</p>
+		</div>
+
+		<div th:if="${param.logout}">
+			<h1 style="color: crimson;">Logged out.</h1>
+		</div>
+
+		<form th:action="@{/login}" th:object="${userDto}" method="post">
+			<input type="hidden"  th:name="${_csrf.parameterName}"
+				 th:value="${_csrf.token}" />
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" th:field="*{username}" /></td>
+					<td th:if="${#fields.hasErrors('username')}"
+						th:errors="*{username}">Name Error</td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" th:field="*{password}" /></td>
+					<td th:if="${#fields.hasErrors('password')}"
+						th:errors="*{password}">Password Error</td>
+				</tr>
+				<tr>
+					<!-- <td><button type="submit">Submit</button></td> -->
+					<td><button type="submit" class="btn btn-primary btn-block">Submit</button></td>
+
+				</tr>
+			</table>
+		</form>
+
+	</div>
+
+</body>
+</html>

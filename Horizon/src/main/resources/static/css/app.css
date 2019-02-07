@@ -1,0 +1,48 @@
+body {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+button {
+	max-width: 120px;
+}
+
+.fieldError {
+	color: crimson;
+}
+
+label {
+	min-width: 80px;
+}
+
+p.active a {
+	color: orange;
+	font-weight: bold;
+}
+
+/* Image cropper */
+.cropit-preview {
+	background-color: #f8f8f8;
+	background-size: cover;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-top: 7px;
+	width: 250px;
+	height: 250px;
+}
+
+.cropit-preview-image-container {
+	cursor: move;
+}
+
+.image-size-label {
+	margin-top: 10px;
+}
+
+input {
+	display: block;
+}
+
+button[type="submit"] {
+	margin-top: 10px;
+}

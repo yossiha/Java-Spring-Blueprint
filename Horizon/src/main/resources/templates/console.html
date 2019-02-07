@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+<html layout:decorate="~{/base.html}">
+<head>
+<title>Horizon - Console</title>
+<body>
+	<div layout:fragment="content">
+		<p />
+
+		<h1>Hello!</h1>
+		<h2 th:text="'Email: ' + ${userEmail} + '!'"></h2>
+		<p>
+	</div>
+</body>
+</html>
